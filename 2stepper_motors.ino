@@ -5,13 +5,13 @@
 const char* ssid     = "Kobryn";
 const char* password = "password123";
 
-// Мотор 1 — горизонтальний
+// мотор горизонтальний
 #define IN1_A 5   // D1
 #define IN2_A 4   // D2
 #define IN3_A 14  // D5
 #define IN4_A 13  // D7
 
-// Мотор 2 — вертикальний
+// мотор вертикальний
 #define IN1_B 0   // D3
 #define IN2_B 2   // D4
 #define IN3_B 3   // RX
@@ -32,7 +32,6 @@ void disableCoils2() {
   digitalWrite(IN3_B, LOW); digitalWrite(IN4_B, LOW);
 }
 
-// ✅ НОРМАЛЬНА СТИЛІЗОВАНА ВЕБКА
 const char HTML[] PROGMEM = R"rawliteral(
 <!DOCTYPE html>
 <html lang="en">
@@ -137,7 +136,7 @@ void setup() {
   disableCoils1();
   disableCoils2();
 
-  // 🔻 ЗМЕНШЕНА ШВИДКІСТЬ (важливо для 2 моторів від ESP)
+
   stepper1.setMaxSpeed(250);
   stepper1.setAcceleration(100);
 
